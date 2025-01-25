@@ -4,6 +4,10 @@
 BACKUP_DIR="/path/to/backup"
 
 # before doing backup, check if the backup directory exists
+# Create the backup directory if it doesn't exist
+if [ ! -d "$BACKUP_DIR" ]; then
+    mkdir -p "$BACKUP_DIR"
+fi
 
 # List of directories to backup
 DIRS_TO_BACKUP=("/home/user1" "/etc" "/var/log")
